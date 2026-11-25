@@ -32,7 +32,7 @@ final class MauticPasskeyIntegration extends AbstractIntegration
 
     public function getIcon(): string
     {
-        return 'plugins/MauticPasskeyBundle/Assets/img/passkey.svg';
+        return 'plugins/MauticPasskeyBundle/Assets/img/passkey.png';
     }
 
     public function getPriority(): int

@@ -22,4 +22,9 @@ if (!str_contains($login, "getIntegrationSettings()->isPublished()")) {
     exit(1);
 }
 
+if (!str_contains($integration, 'Assets/img/passkey.png')) {
+    fwrite(STDERR, "The approved Passkey tile PNG is not configured.\n");
+    exit(1);
+}
+
 echo "Single Active switch contract: OK\n";

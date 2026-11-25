@@ -14,6 +14,8 @@
 - Reduce integration settings to Mautic's single global Active switch. The
   enabled plugin exposes all Passkey behavior; the disabled plugin exposes no
   login button, Users-table columns, or Passkey controls.
+- Replace the Plugins-page tile artwork with the approved Sales Snap Passkey
+  PNG asset.
 
 ## 1.0.0 - 2026-11-25
 
