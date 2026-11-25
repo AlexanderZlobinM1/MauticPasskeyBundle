@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">Passkey</title>
+  <rect width="128" height="128" rx="24" fill="#4e5d9d"/>
+  <path d="M64 22c-19.9 0-36 16.1-36 36 0 13.9 7.9 26 19.4 32l-5.9 15.4a6 6 0 0 0 5.6 8.1h9.7a6 6 0 0 0 5.7-4.1l7.2-22.2A30 30 0 0 0 94 58c0-16.6-13.4-30-30-30a30 30 0 0 0-28.9 21.8" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="64" cy="58" r="10" fill="#ff9f2f"/>
+  <path d="M74 58h31m-10 0v11m-10-11v8" fill="none" stroke="#ff9f2f" stroke-width="8" stroke-linecap="round"/>
+</svg>
+

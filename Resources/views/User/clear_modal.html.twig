@@ -1,0 +1,6 @@
+<p>{{ 'mautic.passkey.clear.modal.explanation'|trans({'%count%': passkeyCount}) }}</p>
+<form id="{{ formId }}" method="post" action="{{ path('mautic_passkey_user_clear') }}">
+    <input type="hidden" name="_token" value="{{ securityGetCsrfToken('mautic_passkey_user_clear') }}" />
+    <input type="hidden" name="user_id" value="{{ item.getId() }}" />
+</form>
+

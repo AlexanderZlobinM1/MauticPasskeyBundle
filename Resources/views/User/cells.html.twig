@@ -1,0 +1,49 @@
+{% set passkey = mautic_passkey_user_rows[item.getId()]|default({
+    'count': 0,
+    'registered': false,
+    'can_manage': false,
+}) %}
+<td class="visible-md visible-lg">
+    <label class="checkbox-inline custom-primary mb-0">
+        <input type="checkbox" disabled="disabled" {% if passkey.registered %}checked="checked"{% endif %} />
+        <span class="mr-0"></span>
+        {{ (passkey.registered ? 'mautic.passkey.registered' : 'mautic.passkey.not_registered')|trans }}
+    </label>
+    {% if passkey.registered %}
+        <div class="small text-muted mt-xs">{{ 'mautic.passkey.registered.count'|trans({'%count%': passkey.count}) }}</div>
+    {% endif %}
+</td>
+<td class="visible-md visible-lg">
+    {% if passkey.can_manage %}
+        {% set clearPasskeyModalId = 'MauticPasskeyClearModal' ~ item.getId() %}
+        {% set clearPasskeyFormId = 'MauticPasskeyClearForm' ~ item.getId() %}
+        <button type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#{{ clearPasskeyModalId }}" aria-controls="{{ clearPasskeyModalId }}" {% if not passkey.registered %}disabled="disabled"{% endif %}>
+            {{ 'mautic.passkey.clear'|trans }}
+        </button>
+        {{ include('@MauticCore/Components/modal.html.twig', {
+            id: clearPasskeyModalId,
+            modalLabel: 'mautic.passkey.clear.modal.label',
+            modalHeading: 'mautic.passkey.clear.modal.heading'|trans({'%user%': item.getName(true)}),
+            modalContent: include('@MauticPasskey/User/clear_modal.html.twig', {
+                item: item,
+                formId: clearPasskeyFormId,
+                passkeyCount: passkey.count,
+            }),
+            type: 'expressive',
+            buttons: [
+                {
+                    label: 'mautic.core.form.cancel'|trans,
+                    variant: 'secondary',
+                    attributes: {'data-dismiss': 'modal'}
+                },
+                {
+                    label: 'mautic.passkey.clear.confirm_button'|trans,
+                    variant: 'primary',
+                    danger: true,
+                    onclick: "document.getElementById('" ~ clearPasskeyFormId ~ "').submit();"
+                }
+            ]
+        }) }}
+    {% endif %}
+</td>
+
