@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.2 - 2026-11-25
+
+- Fix the published release package so standalone installations receive the
+  plugin-local `vendor/autoload.php` and locked WebAuthn runtime dependencies.
+- Keep the installable archive available under a stable release-asset name for
+  MCC latest-release synchronization.
+
 ## 1.0.1 - 2026-11-25
 
 - Ship an installable release archive with locked production Composer
