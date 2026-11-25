@@ -44,7 +44,6 @@ final class LoginButtonSubscriber implements EventSubscriberInterface
         $integration = $this->integrationHelper->getIntegrationObject(MauticPasskeyIntegration::NAME);
         if (!$integration instanceof MauticPasskeyIntegration
             || !$integration->getIntegrationSettings()->isPublished()
-            || !$integration->shouldShowLoginButton()
         ) {
             return;
         }

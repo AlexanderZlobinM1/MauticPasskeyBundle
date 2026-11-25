@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.0.1 - 2026-11-25
+
+- Ship an installable release archive with locked production Composer
+  dependencies, including `web-auth/webauthn-lib`.
+- Load the plugin-local production autoloader when the Mautic root project does
+  not already provide WebAuthn classes.
+- Prevent standalone MCC/MCD installations from exposing a Passkey button that
+  fails at runtime because the WebAuthn library is absent.
+- Register the ceremony and challenge-store services under explicit Mautic
+  container IDs so the authentication subscriber receives service objects
+  instead of literal class-name strings.
+- Reduce integration settings to Mautic's single global Active switch. The
+  enabled plugin exposes all Passkey behavior; the disabled plugin exposes no
+  login button, Users-table columns, or Passkey controls.
+
 ## 1.0.0 - 2026-11-25
 
 - Add passwordless, discoverable WebAuthn passkey registration and sign-in.

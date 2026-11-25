@@ -27,9 +27,11 @@ device authenticator and is never sent to Mautic.
 
 ## Installation
 
-Install the bundle as `plugins/MauticPasskeyBundle`, install Composer
-dependencies in the Mautic application, then run Mautic's normal plugin reload
-and migration/update workflow. The migration creates the plugin-owned
+Install the packaged release archive as `plugins/MauticPasskeyBundle`, then run
+Mautic's normal plugin reload and migration/update workflow. Do not use
+GitHub's automatically generated source archive: the packaged release contains
+the locked production dependencies required by WebAuthn and loads them locally
+when Mautic does not already provide them. The migration creates the plugin-owned
 `plugin_mautic_passkey_credentials` table; no Mautic core table is modified.
 
 Enable **Passkey Login** in Plugins. It can coexist with AuthGuard and with the

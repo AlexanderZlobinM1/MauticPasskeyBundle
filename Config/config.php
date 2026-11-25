@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name'        => 'Passkey Login',
     'description' => 'Passwordless passkey sign-in for Mautic.',
-    'version'     => '1.0.0',
+    'version'     => '1.0.1',
     'author'      => 'Sales Snap',
     'routes'      => [
         'main' => [
@@ -39,8 +39,8 @@ return [
                     'doctrine.orm.entity_manager',
                     'logger',
                     'security.csrf.token_manager',
-                    MauticPlugin\MauticPasskeyBundle\Service\PasskeyCeremonyService::class,
-                    MauticPlugin\MauticPasskeyBundle\Service\PasskeyChallengeStore::class,
+                    'plugin.mautic_passkey.ceremony',
+                    'plugin.mautic_passkey.challenge_store',
                 ],
             ],
             'plugin.mautic_passkey.login_button_subscriber' => [
@@ -89,6 +89,14 @@ return [
                     'mautic.lead.model.dnc',
                     'mautic.lead.field.fields_with_unique_identifier',
                 ],
+            ],
+        ],
+        'other' => [
+            'plugin.mautic_passkey.ceremony' => [
+                'class' => MauticPlugin\MauticPasskeyBundle\Service\PasskeyCeremonyService::class,
+            ],
+            'plugin.mautic_passkey.challenge_store' => [
+                'class' => MauticPlugin\MauticPasskeyBundle\Service\PasskeyChallengeStore::class,
             ],
         ],
     ],

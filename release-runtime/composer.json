@@ -1,0 +1,19 @@
+{
+    "name": "sales-snap/mautic-passkey-runtime",
+    "description": "Locked standalone runtime dependencies for MauticPasskeyBundle release archives.",
+    "license": "GPL-3.0-or-later",
+    "require": {
+        "php": ">=8.2",
+        "ext-json": "*",
+        "ext-openssl": "*",
+        "web-auth/webauthn-lib": "^5.3.17"
+    },
+    "config": {
+        "allow-plugins": false,
+        "platform": {
+            "php": "8.2.0"
+        },
+        "sort-packages": true,
+        "vendor-dir": "../vendor"
+    }
+}

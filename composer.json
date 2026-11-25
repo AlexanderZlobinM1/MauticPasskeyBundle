@@ -31,6 +31,8 @@
         "test": [
             "@php -l MauticPasskeyBundle.php",
             "@php Tests/test_auth_alternative_contract.php",
+            "@php Tests/test_packaged_runtime.php",
+            "@php Tests/test_single_active_switch.php",
             "@php vendor/bin/phpunit --colors=always"
         ]
     },

@@ -36,4 +36,13 @@ if (!str_contains($config, "'mautic.integration.mauticpasskey'")) {
     throw new RuntimeException('Integration service ID must match Mautic IntegrationHelper discovery.');
 }
 
+foreach (['plugin.mautic_passkey.ceremony', 'plugin.mautic_passkey.challenge_store'] as $serviceId) {
+    if (substr_count($config, "'{$serviceId}'") < 2) {
+        throw new RuntimeException(sprintf(
+            'Runtime service %s must be both registered and referenced by the subscriber.',
+            $serviceId
+        ));
+    }
+}
+
 echo "Shared alternative-auth contract: OK\n";
