@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.3 - 2026-11-25
+
+- Fix the plugin metadata version so MCC Sync detects the release as `1.0.3`
+  instead of retaining the previous `1.0.1` value from `Config/config.php`.
+
 ## 1.0.2 - 2026-11-25
 
 - Fix the published release package so standalone installations receive the
