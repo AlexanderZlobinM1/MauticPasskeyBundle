@@ -36,6 +36,10 @@ The migration creates the plugin-owned
 Enable **Passkey Login** in Plugins. The login button appears on Mautic's
 standard login page after the plugin is enabled.
 
+Detailed installation, usage, update, administration, security, and
+troubleshooting instructions are available in the
+[installation and troubleshooting guide](docs/INSTALLATION_AND_TROUBLESHOOTING.md).
+
 ## Administration
 
 The Mautic Users table displays the Passkey registration status and provides a
