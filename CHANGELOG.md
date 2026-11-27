@@ -4,6 +4,8 @@
 
 - Fix the plugin metadata version so MCC Sync detects the release as `1.0.3`
   instead of retaining the previous `1.0.1` value from `Config/config.php`.
+- Add Packagist-ready Composer metadata with the verified Mautic 7.2.x
+  constraint (`>=7.2 <7.3`) and project support links.
 
 ## 1.0.2 - 2026-11-25
 

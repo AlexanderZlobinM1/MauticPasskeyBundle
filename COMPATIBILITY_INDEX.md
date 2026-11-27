@@ -19,3 +19,9 @@ loads it after Mautic's own Composer loader. This fixes standalone archive
 installations where a source-only package exposed the Passkey button without
 providing `web-auth/webauthn-lib`; the release also exposes a stable archive
 asset name for MCC latest-release synchronization.
+
+Composer metadata intentionally requires only the tested Mautic minor branch
+`7.2.x` (`>=7.2 <7.3`). Exact acceptance is recorded on 7.2.1; the branch
+constraint follows the project rule that a confirmed Mautic bug-fix branch
+covers its later patch releases. It prevents Composer from claiming support
+for untested 7.0.x/7.1.x/7.3.x versions.

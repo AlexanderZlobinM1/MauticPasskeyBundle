@@ -3,15 +3,34 @@
     "description": "Passwordless passkey sign-in for Mautic.",
     "type": "mautic-plugin",
     "license": "GPL-3.0-or-later",
+    "homepage": "https://github.com/AlexanderZlobinM1/MauticPasskeyBundle",
+    "keywords": [
+        "mautic",
+        "mautic-plugin",
+        "passkey",
+        "webauthn",
+        "passwordless",
+        "authentication",
+        "security"
+    ],
     "authors": [
         {
             "name": "Alexander Zlobin",
             "role": "Maintainer"
         }
     ],
+    "support": {
+        "issues": "https://github.com/AlexanderZlobinM1/MauticPasskeyBundle/issues",
+        "source": "https://github.com/AlexanderZlobinM1/MauticPasskeyBundle"
+    },
     "autoload": {
         "psr-4": {
             "MauticPlugin\\MauticPasskeyBundle\\": ""
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MauticPlugin\\MauticPasskeyBundle\\Tests\\": "Tests/"
         }
     },
     "extra": {
@@ -21,7 +40,7 @@
         "php": ">=8.2",
         "ext-json": "*",
         "ext-openssl": "*",
-        "mautic/core-lib": "^7.0",
+        "mautic/core-lib": ">=7.2 <7.3",
         "web-auth/webauthn-lib": "^5.3.17"
     },
     "require-dev": {
