@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name'        => 'Passkey Login',
     'description' => 'Passwordless passkey sign-in for Mautic.',
-    'version'     => '1.0.3',
+    'version'     => '1.0.4',
     'author'      => 'Sales Snap',
     'routes'      => [
         'main' => [
