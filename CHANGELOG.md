@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.5 - 2026-11-27
+
+- Make the Packagist README Composer-only: install and update the plugin from
+  the Mautic project root through `mautic/composer-plugin`.
+- Remove archive and GitHub source-archive installation instructions from the
+  Packagist-facing README.
+
 ## 1.0.4 - 2026-11-27
 
 - Add Packagist-ready Composer metadata with the verified Mautic 7.2.x

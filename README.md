@@ -24,21 +24,33 @@ device authenticator and is never sent to Mautic.
 
 ## Installation
 
-Install the packaged release archive as `plugins/MauticPasskeyBundle`, then run
-Mautic's normal plugin reload and migration/update workflow. Do not use
-GitHub's automatically generated source archive: the packaged release contains
-the locked production dependencies required by WebAuthn and loads them locally
-when Mautic does not already provide them.
+This plugin is installed and updated through Composer in a Composer-managed
+Mautic installation. Run the commands from the Mautic project root, where the
+main `composer.json` is located:
+
+```bash
+composer require mautic/composer-plugin
+composer require sales-snap/mautic-passkey-bundle:^1.0
+```
+
+The Mautic Composer plugin installs the bundle into
+`plugins/MauticPasskeyBundle`. Composer selects the latest compatible stable
+release and rejects unsupported Mautic versions.
+
+After installing or updating the package, run Mautic's normal plugin and
+migration workflow:
+
+```bash
+php bin/console mautic:plugins:reload
+php bin/console doctrine:migrations:migrate --no-interaction
+php bin/console cache:clear
+```
 
 The migration creates the plugin-owned
 `plugin_mautic_passkey_credentials` table; no Mautic core table is modified.
 
 Enable **Passkey Login** in Plugins. The login button appears on Mautic's
 standard login page after the plugin is enabled.
-
-Detailed installation, usage, update, administration, security, and
-troubleshooting instructions are available in the
-[installation and troubleshooting guide](docs/INSTALLATION_AND_TROUBLESHOOTING.md).
 
 ## Administration
 
